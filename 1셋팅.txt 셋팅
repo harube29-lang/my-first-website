@@ -1,0 +1,58 @@
+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
+
+【내 GitHub 정보】
+GitHub 사용자명: ___________황혜경________
+GitHub 이메일: _________harube29@gmail.com___________
+Access Token: ___________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_
+
+
+Windows 환경에서 GitHub 백업 환경을 설정해줘. 다음과 같이 진행해줘:
+
+1. GitHub CLI 설치 확인 및 설치
+   - gh --version으로 설치 확인
+   - 미설치 시: winget install GitHub.cli 실행
+   - 설치 후 터미널 재시작 안내
+
+2. GitHub CLI 로그인 (Access Token 사용)
+   - 아래 명령어로 토큰 인증 진행:
+   - echo [여기에AccessToken입력] | gh auth login --with-token
+   - gh auth status로 로그인 확인
+
+3. 프로젝트 루트에 .mcp.json 파일을 생성하고 다음 내용을 작성해줘(이미 .mcp.json파일이 존재할경우 mcpServers에 추가하기):
+
+{
+  "mcpServers": {
+    "git": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@cyanheads/git-mcp-server@latest"],
+      "env": {
+        "GIT_USERNAME": "[hyekyoung]",
+        "GIT_EMAIL": "[harube29@gmail.com]",
+        "GITHUB_TOKEN": "[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]"
+      }
+    }
+  }
+}
+
+4. .claude/settings.local.json 파일에서 MCP 서버 활성화:
+   - "enabledMcpjsonServers" 배열에 "git"가 없으면 추가
+   - 기존: []
+   - 수정: ["git"] (다른 MCP 서버도 있다면 ["git", "supabase"] 형태로)
+   - 중요: 이 단계를 빼먹으면 MCP 서버가 연결되지 않음
+
+5. 설치 후 다음 명령어로 MCP 서버가 정상적으로 인식되는지 확인해줘:
+/mcp
+
+6. 만약 MCP 서버가 인식되지 않으면 다음 방법으로 Claude Code를 재시작하라고 유저에게 안내해줘:
+가이드:
+1) /exit 로 Claude Code 종료
+2) 터미널에서 claude --dangerously-skip-permissions --mcp-config .mcp.json 로 실행
+3) 실행시 enable 설정 허용
+4) /mcp로 "connected" 상태와 27개 도구 확인
+
+중요사항:
+- Windows 환경에서는 반드시 --mcp-config .mcp.json 플래그 필요
+- Windows에서는 --dangerously-skip-permissions 플래그도 함께 사용해야 정상 작동
+- gh auth status로 GitHub 로그인 상태 확인 가능
+- 성공 시 /mcp 명령으로 "git connected" 상태 확인 가능

@@ -1,0 +1,4 @@
+{
+  "dangerouslySkipPermissions": true,
+  "enabledMcpjsonServers": ["git"]
+}

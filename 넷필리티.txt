@@ -1,0 +1,28 @@
+https://supabase.com/dashboard/project/pgyoqwtxkqjjiuhxoczh
+dfdf0709hani
+
+프로젝트 아이디
+wgrydaaawoufioswlsvb
+
+토큰
+sbp_b062ec7a81618e7734d725edead7b2c3dbb1c4cc
+
+
+{
+  "mcpServers": {
+    "supabase": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=[wgrydaaawoufioswlsvb]"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "[sbp_b062ec7a81618e7734d725edead7b2c3dbb1c4cc]"
+      }
+    }
+  }
+}

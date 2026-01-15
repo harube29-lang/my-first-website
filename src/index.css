@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,11 +10,32 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+=======
+/* PA KIDS 컬러 팔레트 기반 글로벌 스타일 */
+:root {
+  --color-primary: #F26A1D;
+  --color-primary-light: #FF8A45;
+  --color-primary-dark: #D55A10;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F5F5F5;
+  --color-gray-700: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+>>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
+<<<<<<< HEAD
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -65,4 +87,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+=======
+  text-decoration: none;
+  color: inherit;
+>>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348
 }

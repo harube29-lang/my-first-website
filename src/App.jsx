@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,3 +34,39 @@ function App() {
 }
 
 export default App
+=======
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import theme from './theme';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import AboutMe from './pages/AboutMe';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Box
+          sx={{
+            minHeight: '100vh',
+            bgcolor: 'background.default',
+          }}
+        >
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Box>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+}
+
+export default App;
+>>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348

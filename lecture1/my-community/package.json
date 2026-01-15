@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "temp-project",
-=======
-  "name": "portfolio",
->>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348
+  "name": "my-community",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,10 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.7",
-    "@mui/material": "^7.3.7",
+    "@supabase/supabase-js": "^2.90.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.12.0"

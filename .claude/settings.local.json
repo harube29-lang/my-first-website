@@ -1,4 +1,17 @@
 {
-  "dangerouslySkipPermissions": true,
-  "enabledMcpjsonServers": ["git"]
+  "permissions": {
+    "allow": [
+      "Bash(gh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate Claude settings\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "git"
+  ],
+  "dangerouslySkipPermissions": true
 }

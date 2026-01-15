@@ -1,0 +1,20 @@
+/* Global styles for the UI Test project */
+
+/* Section styling */
+.section {
+  margin-bottom: 48px;
+}
+
+/* Component showcase grid */
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Demo container */
+.demo-container {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}

@@ -1,39 +1,35 @@
-<<<<<<< HEAD
 # Dependencies
 node_modules/
 
 # Build outputs
 dist/
+dist-ssr/
 build/
 
 # Environment files
 .env
 .env.local
 .env.*.local
+*.local
 
 # IDE
 .idea/
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 *.swp
 *.swo
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 # OS
 .DS_Store
 Thumbs.db
 
 # Logs
-*.log
-npm-debug.log*
-
-# Cache
-.cache/
-.parcel-cache/
-
-# Claude temp files
-tmpclaude-*
-=======
-# Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -41,23 +37,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Cache
+.cache/
+.parcel-cache/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
->>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348
+# Claude temp files
+tmpclaude-*
+
+# MCP configuration (contains secrets)
 .mcp.json
+
+# Local files
 1셋팅.txt
 2.txt
 co0115.txt
+
+# Local Netlify folder
+.netlify

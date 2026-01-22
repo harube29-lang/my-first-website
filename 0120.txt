@@ -1,0 +1,111 @@
+포트폴리오의 Projects 탭을 완전히 구현해줘! supabase mcp를 사용해서 데이터베이스를 구현해서 연결하고, 최종적으로 구현한 후에는 빌드하고 netlify mcp를 활용해서 배포까지 todo 계획을 세워서 순차적으로 모두 진행해줘.
+
+중요 구현 사항:
+1. projects 테이블의 detail_url 필드에는 배포된 프로젝트 사이트 URL 저장
+2. thumbnail_url은 image.thum.io API를 사용하여 자동 생성: https://image.thum.io/get/{detail_url}
+3. 별도의 이미지 스토리지는 사용하지 않고 API로 실시간 썸네일 제공
+
+netlify로 배포한 후에는 deploy 상태를 추적하면서 sleep으로 대기하고 체크하는 방식으로 완전히 배포된 후에 유저에게 안내하기
+
+--- 아래에 step5에서 정리한 UI 기획서와 step6에서 정리한 DB 구조 문서 붙여넣기---
+
+
+== Projects 탭 UI/UX 기획서 ==
+
+선택한 레이아웃 방식
+[ ㅇ] 카드 그리드 레이아웃 (2열/3열)
+[ ] 리스트 형태 레이아웃 (가로 긴 카드)
+[ ] 혼합형 레이아웃 (상단 featured + 하단 grid)
+[ ] 기타: _______________
+
+1.
+1-1
+(o)썸네일 카드 구성
+이미지:
+- 타입: [ ] 스크린샷 [ ㅇ] 모바일 목업 [ ] 커스텀 디자인
+- 비율: [ㅇ ] 16:9 [ ] 4:3 [ ] 1:1
+- 크기: 가로 ___px, 세로 ___px
+
+()1-2 netlif mcp 활용하여 썸네일 이미지url 추출해서 사용
+
+
+
+정보 표시:
+- 프로젝트 이름 (제목)
+- 한 줄 설명: _______________
+- 기술 스택: [ ] 뱃지형 [ ] 텍스트형 [o ] 아이콘형
+- 기타 정보: _______________
+
+링크 및 버튼:
+
+
+- [ ] View Details 버튼 -netlifyfy 링크 연결
+
+
+인터랙션 효과
+- 호버 효과: [ ㅇ] 확대 [ ] 그림자 [ ] 이동 [ ] 회전
+- 클릭 피드백: [ㅇ ] 버튼 애니메이션 [ ] 로딩 표시
+- 모바일 터치: [ ㅇ] 터치 피드백 [ ] 스와이프 지원
+
+반응형 설계
+- 데스크톱: __4_열 그리드
+- 태블릿: _2__열 그리드
+- 모바일: _1__열 그리드
+- 특별 고려사항: _______________
+
+사용자 경험 목표
+1. _______________
+2. _______________
+3. _______________
+
+
+컬러테마
+-> 현재 포트폴리오의 디자인 테마에 맞춤
+
+
+== 기획 완료 ==
+
+
+
+
+== Projects 테이블 DB 구조 정리 ==
+
+프로젝트 정보 (projects 테이블)
+
+- Projects 탭 UI에서 필요한 정보들:
+
+
+  * id: (프로젝트 고유번호 - 자동으로 1, 2, 3... 증가)
+  * title: (프로젝트 제목)
+  * description: (프로젝트 설명)
+  * tech_stack: (기술 스택 배열 - ["React", "Supabase", "CSS3"])
+  * detail_url: (배포된 사이트 링크) "https://petpi-volunteer.netlify.app/"
+  * thumbnail_url: (썸네일 이미지 경로)
+  * is_published: (게시 여부 - true/false)
+  * sort_order: (표시 순서)
+  * created_at: (생성일시)
+  * updated_at: (수정일시)
+
+
+
+
+기본 프로젝트 데이터:
+
+
+프로젝트 1 (petmoyeo):
+- title: "petpi 커뮤니티 플랫폼"
+- description: "petmoyeo 폴더 참고"
+- tech_stack: ["React", "Supabase", "PostgreSQL", "CSS3"]
+- detail_url: "https://petpi-volunteer.netlify.app/home"
+- thumbnail_url: "https://image.thum.io/get/
+https://community-demo.netlify.app"
+
+
+프로젝트 2 (my-community):
+- title: "my-community"
+- description: :"my-community 폴더 참고"
+- tech_stack: ["React", "Supabase", "Unsplash API", "MUI"]
+- detail_url: "https://mini-sns-demo.netlify.app"
+- thumbnail_url: "https://image.thum.io/get/https://mini-sns-demo.netlify.app"
+
+== Projects DB 구조 정리 완료 ==

@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "temp-project",
-=======
-  "name": "portfolio",
->>>>>>> 79b6d76644f48e1631f3893da3caeccef8747348
+  "name": "my-ai-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
